@@ -5,10 +5,12 @@ import {usersReducer} from './usersReducer';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { applyMiddleware } from 'redux';
+import {todosReducer} from './todosReducer';
 
 const rootReducer = combineReducers({
     counter: counterReducer,
-    users: usersReducer
+    users: usersReducer,
+    todos: todosReducer
 });
 
 
