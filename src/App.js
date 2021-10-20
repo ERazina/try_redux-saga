@@ -2,7 +2,7 @@ import './App.css';
 import { useDispatch, useSelector} from 'react-redux';
 import {increaseAction, decreeseAction } from './store/counterReducer';
 import {getUsers} from './async/users';
-import {getTodos} from './async/todos';
+import {getTodos, deleteTodo} from './async/todos';
 
 
 function App() {
@@ -38,9 +38,10 @@ const decrement = (counter) => {
 
 
       { todos.length !== 0 ?
-      todos.map(todo => (<div>{todo.title} {todo.completed ? 'completed' : 'not completed'}</div>)):
-      <div>No todos</div>
-
+      todos.map(todo => (<div>{todo.title} {todo.completed ? 'completed' : 
+        (<button onClick={() => dispatch(() => deleteTodo(todo.id))}>finish</button>)}</div>))
+        :
+        <div>No todos</div>
       }
     </div>
   );
