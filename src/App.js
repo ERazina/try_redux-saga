@@ -39,7 +39,7 @@ const decrement = (counter) => {
 
       { todos.length !== 0 ?
       todos.map(todo => (<div>{todo.title} {todo.completed ? 'completed' : 
-        (<button onClick={() => dispatch(() => deleteTodo(todo.id))}>finish</button>)}</div>))
+        (<button onClick={() => dispatch(deleteTodo(todo.id))}>finish</button>)}</div>))
         :
         <div>No todos</div>
       }

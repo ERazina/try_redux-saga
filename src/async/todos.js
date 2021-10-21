@@ -26,10 +26,10 @@ export const deleteTodo = (id) => {
 
 
     return dispatch => (
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        fetch('https://my-json-server.typicode.com/erazina/toDoAppBackend/todos/' + id, {
         method: 'DELETE'}
             ))
             .then(res => res.json())
         .then(res => dispatch(todoDeleteAction(res)))
-        .then(res => console.log(res))
+        // .then(res => console.log(res))
 }
