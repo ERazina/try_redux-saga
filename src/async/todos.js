@@ -11,23 +11,8 @@ export const getTodos = () => {
 
 
 export const deleteTodo = (todo) => {
-    // console.log(1)
-    // return dispatch => (
-    //     fetch(`https://my-json-server.typicode.com/erazina/toDoAppBackend/todos/${id}`, 
-    //     {method: 'DELETE', 
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: null})
-    //     .then(res => res.json())
-    //     .then(res => dispatch(todoDeleteAction(res)))
-    //     .then(res => console.log(res))
-    // )
-
-
     return dispatch => (
         fetch('https://my-json-server.typicode.com/erazina/toDoAppBackend/todos/' + todo.id))
             .then(res => res.json())
         .then(res => dispatch(todoDeleteAction(res)))
-        // .then(res => console.log(res))
 }
