@@ -1,5 +1,3 @@
-import {createStore} from 'redux';
-
 export const INCREASE = 'INCREASE';
 export const DECREESE = 'DECREESE';
 
@@ -10,7 +8,6 @@ const defaultState = {
 export const counterReducer = (state = defaultState, action) => {
     switch(action.type){
         case INCREASE: {
-            // return {...state, customers: [...state.customers, action.payload]}
             return {...state, counter: state.counter + 1}
         }
 

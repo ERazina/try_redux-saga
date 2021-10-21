@@ -15,8 +15,7 @@ export const todosReducer = (state = initialState, action) => {
         }
         case DELETE_TODO: {
             return {...state, 
-                todos: [...state.todos.filter((todo) => todo === action.payload)]
-                // todos: [...state.todos, ...action.payload]
+                todos: [...state.todos.filter((todo) => todo.completed && todo.id !== action.payload)]
             }
         }
         default: return state;

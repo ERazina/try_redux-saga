@@ -12,7 +12,7 @@ export const getTodos = () => {
 
 export const deleteTodo = (todo) => {
     return dispatch => (
-        fetch('https://my-json-server.typicode.com/erazina/toDoAppBackend/todos/' + todo.id))
-            .then(res => res.json())
+        fetch(`https://my-json-server.typicode.com/erazina/toDoAppBackend/todos/${todo.id}`))
+        .then(res => res.json())
         .then(res => dispatch(todoDeleteAction(res)))
 }
